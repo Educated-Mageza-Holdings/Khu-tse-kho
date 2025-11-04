@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - KgoTsheKhu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>KgoTsheKhu</h1>
+                    <p class="tagline">Handcrafted with Love</p>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="products.html" class="active">Products</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products.html?category=coasters">Coasters</a></li>
+                        <li><a href="products.html?category=home-decor">Home Decor</a></li>
+                        <li><a href="products.html?category=gifts">Gifts</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="search-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="cart-btn" aria-label="Shopping cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Products</span>
+        </div>
+    </div>
+
+    <!-- Products Page -->
+    <div class="products-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Our Products</h1>
+                <p>Handcrafted wooden treasures for your home</p>
+            </div>
+
+            <div class="products-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h3>Categories</h3>
+                        <ul class="filter-list">
+                            <li><button class="filter-btn active" data-category="all">All Products <span>(12)</span></button></li>
+                            <li><button class="filter-btn" data-category="coasters">Coasters <span>(4)</span></button></li>
+                            <li><button class="filter-btn" data-category="home-decor">Home Decor <span>(5)</span></button></li>
+                            <li><button class="filter-btn" data-category="gifts">Gifts <span>(3)</span></button></li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <ul class="filter-list">
+                            <li><button class="filter-btn" data-price="0-200">Under R200</button></li>
+                            <li><button class="filter-btn" data-price="200-400">R200 - R400</button></li>
+                            <li><button class="filter-btn" data-price="400-600">R400 - R600</button></li>
+                            <li><button class="filter-btn" data-price="600+">R600+</button></li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Wood Type</h3>
+                        <ul class="filter-list">
+                            <li><label class="checkbox-label"><input type="checkbox" value="oak"> Oak</label></li>
+                            <li><label class="checkbox-label"><input type="checkbox" value="walnut"> Walnut</label></li>
+                            <li><label class="checkbox-label"><input type="checkbox" value="maple"> Maple</label></li>
+                        </ul>
+                    </div>
+
+                    <button class="reset-filters">Reset Filters</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="products-main">
+                    <div class="products-toolbar">
+                        <div class="results-count">Showing 12 products</div>
+                        <div class="sort-options">
+                            <label for="sort">Sort by:</label>
+                            <select id="sort" class="sort-select">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest</option>
+                                <option value="popular">Most Popular</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="product-grid" id="productsGrid">
+                        <!-- Product 1 -->
+                        <div class="product-card" data-category="coasters" data-price="200">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&h=400&fit=crop" alt="Engraved Rustic Coasters">
+                                <span class="badge badge-sale">29% OFF</span>
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                            <div class="card-content">
+                                <h3>Engraved Rustic Coasters</h3>
+                                <div class="card-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(127)</span>
+                                </div>
+                                <div class="card-price">
+                                    <span class="current">R 200.00</span>
+                                    <span class="original">R 280.00</span>
+                                </div>
+                                <a href="product.html" class="btn-view">View Details</a>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="product-card" data-category="home-decor" data-price="350">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=400&h=400&fit=crop" alt="Wooden Serving Board">
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                            <div class="card-content">
+                                <h3>Wooden Serving Board</h3>
+                                <div class="card-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(89)</span>
+                                </div>
+                                <div class="card-price">
+                                    <span class="current">R 350.00</span>
+                                </div>
+                                <a href="product.html" class="btn-view">View Details</a>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card" data-category="home-decor" data-price="450">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1595435742656-5272d0b0d-db?w=400&h=400&fit=crop" alt="Engraved Cutting Board">
+                                <span class="badge badge-new">New</span>
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                            <div class="card-content">
+                                <h3>Engraved Cutting Board</h3>
+                                <div class="card-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(64)</span>
+                                </div>
+                                <div class="card-price">
+                                    <span class="current">R 450.00</span>
+                                </div>
+                                <a href="product.html" class="btn-view">View Details</a>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="product-card" data-category="home-decor" data-price="580">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1541643600914-78b084-f85?w=400&h=400&fit=crop" alt="Rustic Wall Art">
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                            <div class="card-content">
+                                <h3>Rustic Wall Art</h3>
+                                <div class="card-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(42)</span>
+                                </div>
+                                <div class="card-price">
+                                    <span class="current">R 580.00</span>
+                                </div>
+                                <a href="product.html" class="btn-view">View Details</a>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="product-card" data-category="coasters" data-price="180">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1587052283967-1-acb6c9e?w=400&h=400&fit=crop" alt="Wooden Coaster Holder">
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                            <div class="card-content">
+                                <h3>Wooden Coaster Holder</h3>
+                                <div class="card-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span>(31)</span>
+                                </div>
+                                <div class="card-price">
+                                    <span class="current">R 180.00</span>
+                                </div>
+                                <a href="product.html" class="btn-view">View Details</a>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="product-card" data-category="gifts" data-price="320">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1544948950-fa07a98b0225?w=400&h=400&fit=crop" alt="Personalized Photo Frame">
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                            <div class="card-content">
+                                <h3>Personalized Photo Frame</h3>
+                                <div class="card-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(76)</span>
+                                </div>
+                                <div class="card-price">
+                                    <span class="current">R 320.00</span>
+                                </div>
+                                <a href="product.html" class="btn-view">View Details</a>
+                            </div>
+                        </div>
+
+                        <!-- Product 7 -->
+                        <div class="product-card" data-category="home-decor" data-price="680">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=400&fit=crop" alt="Large Wooden Tray">
+                                <span class="badge badge-new">New</span>
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                            <div class="card-content">
+                                <h3>Large Wooden Tray</h3>
+                                <div class="card-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(53)</span>
+                                </div>
+                                <div class="card-price">
+                                    <span class="current">R 680.00</span>
+                                </div>
+                                <a href="product.html" class="btn-view">View Details</a>
+                            </div>
+                        </div>
+
+                        <!-- Product 8 -->
+                        <div class="product-card" data-category="coasters" data-price="220">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1604762524889-8b8d9e14c8d7?w=400&h=400&fit=crop" alt="Premium Coaster Set">
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                            <div class="card-content">
+                                <h3>Premium Coaster Set</h3>
+                                <div class="card-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(98)</span>
+                                </div>
+                                <div class="card-price">
+                                    <span class="current">R 220.00</span>
+                                </div>
+                                <a href="product.html" class="btn-view">View Details</a>
+                            </div>
+                        </div>
+
+                        <!-- Product 9 -->
+                        <div class="product-card" data-category="gifts" data-price="420">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&h=400&fit=crop" alt="Gift Box Set">
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                            <div class="card-content">
+                                <h3>Gift Box Set</h3>
+                                <div class="card-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(67)</span>
+                                </div>
+                                <div class="card-price">
+                                    <span class="current">R 420.00</span>
+                                </div>
+                                <a href="product.html" class="btn-view">View Details</a>
+                            </div>
+                        </div>
+
+                        <!-- Product 10 -->
+                        <div class="product-card" data-category="home-decor" data-price="150">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=400&h=400&fit=crop" alt="Wooden Candle Holder">
+                                <span class="badge badge-sale">25% OFF</span>
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                            <div class="card-content">
+                                <h3>Wooden Candle Holder</h3>
+                                <div class="card-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span>(45)</span>
+                                </div>
+                                <div class="card-price">
+                                    <span class="current">R 150.00</span>
+                                    <span class="original">R 200.00</span>
+                                </div>
+                                <a href="product.html" class="btn-view">View Details</a>
+                            </div>
+                        </div>
+
+                        <!-- Product 11 -->
+                        <div class="product-card" data-category="coasters" data-price="240">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&h=400&fit=crop" alt="Marble & Wood Coasters">
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                            <div class="card-content">
+                                <h3>Marble & Wood Coasters</h3>
+                                <div class="card-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(112)</span>
+                                </div>
+                                <div class="card-price">
+                                    <span class="current">R 240.00</span>
+                                </div>
+                                <a href="product.html" class="btn-view">View Details</a>
+                            </div>
+                        </div>
+
+                        <!-- Product 12 -->
+                        <div class="product-card" data-category="gifts" data-price="380">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=400&h=400&fit=crop" alt="Custom Engraved Board">
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                            <div class="card-content">
+                                <h3>Custom Engraved Board</h3>
+                                <div class="card-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>(84)</span>
+                                </div>
+                                <div class="card-price">
+                                    <span class="current">R 380.00</span>
+                                </div>
+                                <a href="product.html" class="btn-view">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="pagination-btn" disabled>Previous</button>
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KgoTsheKhu</h3>
+                    <p>Handcrafted wooden products made with love in South Africa. Each piece tells a story.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                        <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="products.html?category=coasters">Coasters</a></li>
+                        <li><a href="products.html?category=home-decor">Home Decor</a></li>
+                        <li><a href="products.html?category=gifts">Gifts</a></li>
+                        <li><a href="products.html">All Products</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers and updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 KgoTsheKhu. All rights reserved. Handcrafted with love in South Africa.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span id="toastMessage">Success!</span>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>
